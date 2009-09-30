@@ -1,4 +1,4 @@
-module TBGTestHelper
+module WDLTestHelper
 
   def deny(condition, message=nil)
     assert !condition, message
