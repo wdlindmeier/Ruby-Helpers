@@ -41,6 +41,10 @@ class ActiveRecord::Base
     multi_assocs  = methods.grep(/_ids\=$/){ |m| m.sub(/_ids\=$/, '').pluralize }
     single_assocs + multi_assocs
   end
+  
+  def self.find_random
+    self.find :first, :offset => rand(self.count)
+  end
     
 end
 
