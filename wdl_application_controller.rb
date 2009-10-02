@@ -61,8 +61,7 @@ class WDLApplicationController < ActionController::Base
           flash[:error] = message
           return redirect_back_or_default(redirect_path)
         end
-        format.js   { return render(:text => '', :status => 404, :layout => false) }
-        format.xml  { return render(:text => '', :status => 404, :layout => false) }
+        format.any(:js, :json, :xml) { return render(:text => '', :status => 404, :layout => false) }
       end      
     end    
   end
