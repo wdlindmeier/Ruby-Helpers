@@ -2,7 +2,8 @@
 
 class WDLApplicationController < ActionController::Base
   
-  after_filter :store_flash_in_cookie
+  # Uncomment if we're using cookie_flash
+  # after_filter :store_flash_in_cookie
   before_filter :store_return_to
   before_filter :set_is_admin_page, :only => :admin
   
