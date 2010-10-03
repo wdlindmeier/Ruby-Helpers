@@ -234,3 +234,9 @@ module WDLTestHelper
   end
     
 end
+
+class ActionController::TestRequest 
+  def set_header(name, value)
+    @env[name] = value
+  end
+end

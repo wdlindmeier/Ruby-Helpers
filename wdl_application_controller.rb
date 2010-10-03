@@ -81,5 +81,10 @@ class WDLApplicationController < ActionController::Base
       super
     end
   end
+      
+  def append_local_stylesheets(*stylesheet_names)
+    @local_stylesheets ||= []
+    @local_stylesheets.concat stylesheet_names
+  end
     
 end
